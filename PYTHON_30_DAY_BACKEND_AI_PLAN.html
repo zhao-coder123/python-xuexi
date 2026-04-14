@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 天 Python 后端 + AI 集成执行清单</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --panel: rgba(255, 255, 255, 0.84);
+        --panel-strong: #ffffff;
+        --text: #18212f;
+        --muted: #5e6b82;
+        --line: rgba(24, 33, 47, 0.08);
+        --primary: #4f46e5;
+        --primary-soft: rgba(79, 70, 229, 0.1);
+        --green: #16a34a;
+        --orange: #ea580c;
+        --shadow: 0 20px 60px rgba(41, 53, 108, 0.08);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 32%),
+          radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 28%),
+          var(--bg);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .layout {
+        width: min(1400px, calc(100% - 32px));
+        margin: 32px auto;
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 24px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+      }
+
+      .brand {
+        margin-bottom: 18px;
+      }
+
+      .brand .eyebrow {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .brand h1 {
+        margin: 14px 0 8px;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      .brand p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .nav {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .nav a {
+        padding: 12px 14px;
+        border-radius: 14px;
+        color: #334155;
+        font-size: 14px;
+        transition: 0.2s ease;
+      }
+
+      .nav a:hover {
+        background: rgba(79, 70, 229, 0.08);
+        color: var(--primary);
+      }
+
+      .sidebar-note {
+        margin-top: 18px;
+        padding: 14px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(14, 165, 233, 0.08));
+        color: #334155;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .content {
+        display: grid;
+        gap: 24px;
+      }
+
+      .hero,
+      .card,
+      .week {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding: 32px;
+        display: grid;
+        gap: 22px;
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .hero h2 {
+        margin: 10px 0 10px;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.1;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .badge-row,
+      .pill-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .badge,
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .badge {
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+      }
+
+      .pill {
+        background: var(--primary-soft);
+        color: var(--primary);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .stat {
+        padding: 18px;
+        border-radius: 18px;
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+      }
+
+      .stat .label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .stat .value {
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .grid.two {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        padding: 26px;
+      }
+
+      .card h3 {
+        margin: 0 0 14px;
+        font-size: 20px;
+      }
+
+      .card p,
+      .card li,
+      .week li {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .check-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .check-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .check-list li::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        margin-top: 4px;
+        border-radius: 6px;
+        border: 1.5px solid rgba(79, 70, 229, 0.3);
+        background: linear-gradient(180deg, #fff, #f8faff);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        flex: none;
+      }
+
+      .table-wrap {
+        overflow: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .week {
+        padding: 28px;
+      }
+
+      .week-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+
+      .week-header h3 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .week-summary {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .week-deliverables {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-bottom: 22px;
+      }
+
+      .deliverable {
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+        color: #334155;
+      }
+
+      .days {
+        display: grid;
+        gap: 14px;
+      }
+
+      details.day {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel-strong);
+      }
+
+      details.day[open] {
+        box-shadow: 0 12px 30px rgba(79, 70, 229, 0.08);
+      }
+
+      summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .day-left {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        min-width: 0;
+      }
+
+      .day-index {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(14, 165, 233, 0.12));
+        color: var(--primary);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        flex: none;
+      }
+
+      .day-title {
+        min-width: 0;
+      }
+
+      .day-title strong {
+        display: block;
+        font-size: 16px;
+      }
+
+      .day-title span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .tag {
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .tag.base { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+      .tag.data { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+      .tag.build { background: rgba(34, 197, 94, 0.12); color: var(--green); }
+      .tag.ai { background: rgba(249, 115, 22, 0.12); color: var(--orange); }
+
+      .day-body {
+        padding: 0 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .mini {
+        padding: 16px;
+        border-radius: 16px;
+        background: #fbfcff;
+        border: 1px solid var(--line);
+      }
+
+      .mini h4 {
+        margin: 0 0 12px;
+        font-size: 14px;
+      }
+
+      .mini ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .footer-note {
+        padding: 26px;
+        border-radius: var(--radius);
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(14, 165, 233, 0.9));
+        color: white;
+        box-shadow: var(--shadow);
+      }
+
+      .footer-note h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+      }
+
+      .footer-note p {
+        margin: 0;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      @media (max-width: 1100px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+        }
+
+        .stats,
+        .grid.two,
+        .week-deliverables,
+        .day-body {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .layout {
+          width: min(100% - 20px, 1400px);
+          margin: 12px auto 24px;
+        }
+
+        .hero,
+        .card,
+        .week,
+        .sidebar,
+        .footer-note {
+          border-radius: 20px;
+        }
+
+        .hero,
+        .card,
+        .week {
+          padding: 20px;
+        }
+
+        summary {
+          padding: 16px;
+        }
+
+        .day-body {
+          padding: 0 16px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="eyebrow">30 DAYS ROADMAP</span>
+          <h1>Python 后端 + AI 集成</h1>
+          <p>更像 Notion / 飞书的执行清单。先把后台 API 能力做稳，再把 AI 接进业务模块。</p>
+        </div>
+
+        <nav class="nav">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#stack">Stack Board</a>
+          <a href="#week1">Week 1</a>
+          <a href="#week2">Week 2</a>
+          <a href="#week3">Week 3</a>
+          <a href="#week4">Week 4</a>
+          <a href="#next">Next Step</a>
+        </nav>
+
+        <div class="sidebar-note">
+          每天只需要做三件事：看一点、写一点、记一点。不要把这 30 天做成“看完了”，要做成“交付了”。
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="hero" id="dashboard">
+          <div class="hero-top">
+            <div>
+              <div class="pill-row">
+                <span class="pill">FastAPI</span>
+                <span class="pill">MySQL</span>
+                <span class="pill">管理后台</span>
+                <span class="pill">Dify / Agent</span>
+              </div>
+              <h2>30 天做出一个能演示的<br />AI 内容管理后台</h2>
+              <p>
+                这不是纯后端语法路线，而是一条以项目为主线的执行计划：先学 API 基础、数据库、权限、上传、日志，
+                再把 AI 能力以平台集成的方式接到真实业务模块里。
+              </p>
+            </div>
+            <div class="badge-row">
+              <span class="badge">最终项目：AI 内容管理后台</span>
+              <span class="badge">数据库：MySQL</span>
+              <span class="badge">AI：Dify / 模型 API</span>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="label">总天数</div>
+              <div class="value">30</div>
+            </div>
+            <div class="stat">
+              <div class="label">阶段数</div>
+              <div class="value">4</div>
+            </div>
+            <div class="stat">
+              <div class="label">核心模块</div>
+              <div class="value">10+</div>
+            </div>
+            <div class="stat">
+              <div class="label">最终交付</div>
+              <div class="value">1 项目</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid two" id="stack">
+          <article class="card">
+            <h3>目标看板</h3>
+            <ul class="check-list">
+              <li>用 FastAPI 写出结构清晰、带文档的 API</li>
+              <li>用 MySQL 设计用户、角色、文章、日志等业务表</li>
+              <li>完成登录、JWT、权限、分页、上传、日志这些后台基础能力</li>
+              <li>把 Dify 或模型平台能力接进文章业务模块</li>
+              <li>收口成一个可演示、可继续扩展的 AI 内容管理后台</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>技术栈</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>模块</th>
+                    <th>选择</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>后端框架</td><td>FastAPI</td></tr>
+                  <tr><td>ORM</td><td>SQLAlchemy</td></tr>
+                  <tr><td>数据库</td><td>MySQL</td></tr>
+                  <tr><td>缓存</td><td>Redis</td></tr>
+                  <tr><td>鉴权</td><td>JWT</td></tr>
+                  <tr><td>迁移</td><td>Alembic</td></tr>
+                  <tr><td>AI 集成</td><td>Dify / OpenAI / DeepSeek / 通义</td></tr>
+                  <tr><td>部署</td><td>Docker + Nginx + Uvicorn</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Sprint Overview</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>周次</th>
+                  <th>主题</th>
+                  <th>本周交付</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Week 1</td>
+                  <td>Python + FastAPI 基础</td>
+                  <td>一个能跑的 API 项目</td>
+                </tr>
+                <tr>
+                  <td>Week 2</td>
+                  <td>MySQL + 后台核心能力</td>
+                  <td>登录、权限、CRUD 打通</td>
+                </tr>
+                <tr>
+                  <td>Week 3</td>
+                  <td>工程化 + Redis + 上传 + 日志</td>
+                  <td>管理后台后端原型</td>
+                </tr>
+                <tr>
+                  <td>Week 4</td>
+                  <td>AI 集成 + Dify + Agent</td>
+                  <td>AI 内容管理后台 demo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="week" id="week1">
+          <div class="week-header">
+            <h3>Week 1 | Python + FastAPI 基础</h3>
+            <span class="tag base">基础打底</span>
+          </div>
+          <p class="week-summary">目标是从“会一点 Python”切到“能写结构化 API 项目”。这一周不追求复杂业务，只追求把接口、校验、分层和文档跑通。</p>
+          <div class="week-deliverables">
+            <div class="deliverable">FastAPI 项目初始化完成</div>
+            <div class="deliverable">users 基础 CRUD 完成</div>
+            <div class="deliverable">Swagger 文档可访问</div>
+            <div class="deliverable">项目完成基础分层</div>
+          </div>
+          <div class="days">
+            <details class="day" open>
+              <summary>
+                <div class="day-left">
+                  <div class="day-index">1</div>
+                  <div class="day-title"><strong>Python 基础快速补齐</strong><span>变量、函数、模块、虚拟环境</span></div>
+                </div>
+                <span class="tag base">Base</span>
+              </summary>
+              <div class="day-body">
+                <section class="mini"><h4>学习内容</h4><ul><li>变量、函数、模块</li><li>列表、字典、集合</li><li>条件、循环</li><li>虚拟环境</li></ul></section>
+                <section class="mini"><h4>实践任务</h4><ul><li>建项目目录</li><li>创建虚拟环境</li><li>安装 fastapi、uvicorn</li><li>写 hello.py</li></ul></section>
+                <section class="mini"><h4>完成标准</h4><ul><li>能运行 Python 脚本</li><li>知道如何管理依赖</li></ul></section>
+              </div>
+            </details>
+
+            <details class="day"><summary><div class="day-left"><div class="day-index">2</div><div class="day-title"><strong>Python 后端常见写法</strong><span>类、异常、类型注解、datetime</span></div></div><span class="tag base">Base</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>类与对象</li><li>异常处理</li><li>类型注解</li><li>datetime</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>写用户类</li><li>写配置模块</li><li>写异常示例</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>熟悉 Python 后端代码风格</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">3</div><div class="day-title"><strong>HTTP 和 API 基础</strong><span>服务端视角理解接口</span></div></div><span class="tag base">Base</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>HTTP 方法</li><li>状态码</li><li>query / path / body</li><li>JSON 接口设计</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>GET /ping</li><li>GET /users/{id}</li><li>POST /users</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>理解接口是如何被设计和消费的</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">4</div><div class="day-title"><strong>FastAPI 路由与参数</strong><span>路由拆分和参数校验</span></div></div><span class="tag base">Base</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>Query、Path、Body 参数</li><li>Pydantic 模型</li><li>路由拆分</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>建立 routers/</li><li>拆分路由文件</li><li>定义请求模型</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>拥有结构化的 FastAPI 小项目</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">5</div><div class="day-title"><strong>响应、异常、文档</strong><span>让接口更像正式项目</span></div></div><span class="tag base">Base</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>统一响应结构</li><li>全局异常处理</li><li>Swagger 文档</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>统一返回格式</li><li>处理参数错误</li><li>在 Swagger 中测试</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>接口风格规范化</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">6</div><div class="day-title"><strong>项目分层</strong><span>从能跑走向可维护</span></div></div><span class="tag base">Base</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>router / service / schema / model</li><li>配置文件</li><li>环境变量</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>建立 app/ 目录结构</li><li>拆出 core / services / schemas</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>项目具备基础工程化结构</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">7</div><div class="day-title"><strong>Week 1 收口</strong><span>完成最小用户管理 API</span></div></div><span class="tag base">Review</span></summary><div class="day-body"><section class="mini"><h4>必须交付</h4><ul><li>用户列表</li><li>用户详情</li><li>创建用户</li><li>更新用户</li><li>删除用户</li></ul></section><section class="mini"><h4>验收点</h4><ul><li>路由清晰</li><li>参数校验清晰</li><li>文档可访问</li></ul></section><section class="mini"><h4>自检</h4><ul><li>我能独立写 FastAPI 路由</li><li>我会用 Pydantic 做校验</li><li>我有一个最小 CRUD API</li></ul></section></div></details>
+          </div>
+        </section>
+
+        <section class="week" id="week2">
+          <div class="week-header">
+            <h3>Week 2 | MySQL + 后台核心能力</h3>
+            <span class="tag data">Data</span>
+          </div>
+          <p class="week-summary">这一周的关键是把后台系统最重要的几条链路打通：数据库、登录、JWT、权限和列表接口。做到这里，你已经从“会写接口”进入“能做后台”。</p>
+          <div class="week-deliverables">
+            <div class="deliverable">FastAPI + MySQL + SQLAlchemy 跑通</div>
+            <div class="deliverable">注册 / 登录 / JWT 完成</div>
+            <div class="deliverable">基础角色权限完成</div>
+            <div class="deliverable">分页、过滤、排序完成</div>
+          </div>
+          <div class="days">
+            <details class="day" open><summary><div class="day-left"><div class="day-index">8</div><div class="day-title"><strong>MySQL 基础入门</strong><span>数据库、表、字段和基础 SQL</span></div></div><span class="tag data">Data</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>数据库、表、字段</li><li>主键、唯一键</li><li>增删改查 SQL</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>安装 MySQL</li><li>创建 ai_admin_demo</li><li>创建 users 表</li><li>手写 CRUD SQL</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>会写最基本 SQL</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">9</div><div class="day-title"><strong>表设计基础</strong><span>为后台模块做数据库设计</span></div></div><span class="tag data">Data</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>一对多关系</li><li>字段类型选择</li><li>时间字段、逻辑删除</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>设计 users</li><li>设计 roles</li><li>设计 articles</li><li>设计 operation_logs</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>形成数据库草图</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">10</div><div class="day-title"><strong>SQLAlchemy 入门</strong><span>把数据库接入 FastAPI</span></div></div><span class="tag data">Data</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>ORM 基础</li><li>Model 定义</li><li>Session</li><li>查询与提交</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>映射 users 模型</li><li>用 ORM 改写 CRUD</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>FastAPI + MySQL + SQLAlchemy 跑通</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">11</div><div class="day-title"><strong>Alembic 迁移</strong><span>正规管理表结构变更</span></div></div><span class="tag data">Data</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>migration 的价值</li><li>Alembic 初始化</li><li>生成迁移</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>生成 users、roles 迁移</li><li>执行迁移</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>学会管理表结构版本</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">12</div><div class="day-title"><strong>登录与密码处理</strong><span>后台第一道门槛</span></div></div><span class="tag data">Auth</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>用户注册</li><li>密码加密</li><li>JWT 基础</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>实现注册接口</li><li>实现登录接口</li><li>返回 access token</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>完成基本登录流程</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">13</div><div class="day-title"><strong>鉴权与权限</strong><span>从登录进入权限体系</span></div></div><span class="tag data">Auth</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>依赖注入鉴权</li><li>当前用户获取</li><li>角色权限基础</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>实现登录校验依赖</li><li>增加 admin / editor</li><li>限制管理员接口</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>后台具备最基础权限能力</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">14</div><div class="day-title"><strong>分页、过滤、排序</strong><span>让列表接口更像真实后台</span></div></div><span class="tag data">List</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>分页参数设计</li><li>条件过滤</li><li>排序</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>用户列表增加分页</li><li>增加关键词搜索</li><li>增加创建时间排序</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>拥有一个像样的后台列表接口</li></ul></section></div></details>
+          </div>
+        </section>
+
+        <section class="week" id="week3">
+          <div class="week-header">
+            <h3>Week 3 | 工程化 + 上传 + Redis + 审计</h3>
+            <span class="tag build">Build</span>
+          </div>
+          <p class="week-summary">这周的重点是从“有几个接口”进入“像一个后台项目”。上传、缓存、操作日志、测试和规范，都是让项目可维护的关键步骤。</p>
+          <div class="week-deliverables">
+            <div class="deliverable">articles 内容模块完成</div>
+            <div class="deliverable">上传接口完成</div>
+            <div class="deliverable">Redis 缓存完成</div>
+            <div class="deliverable">日志、测试、规范接入</div>
+          </div>
+          <div class="days">
+            <details class="day" open><summary><div class="day-left"><div class="day-index">15</div><div class="day-title"><strong>内容管理模块</strong><span>后台业务模块搭建</span></div></div><span class="tag build">Build</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>后台模块设计</li><li>CRUD 模块化复用</li><li>业务字段设计</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>新增 articles 模块</li><li>文章创建、编辑、删除、列表</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>第二个业务模块完成</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">16</div><div class="day-title"><strong>文件上传</strong><span>后台常见能力：文件处理</span></div></div><span class="tag build">Upload</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>Multipart 上传</li><li>文件存储策略</li><li>安全注意事项</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>实现上传接口</li><li>创建 files 表</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>上传能力完成第一版</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">17</div><div class="day-title"><strong>Redis 基础</strong><span>缓存和辅助状态管理</span></div></div><span class="tag build">Cache</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>Redis 常见数据结构</li><li>缓存场景</li><li>token / session 辅助场景</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>跑通 Redis</li><li>给热点列表接口加缓存</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>第一个缓存接口完成</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">18</div><div class="day-title"><strong>操作日志与审计</strong><span>让后台具备可追踪能力</span></div></div><span class="tag build">Audit</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>日志与审计的价值</li><li>操作记录设计</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>新增 operation_logs 表</li><li>记录新增、删除、更新操作</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>初步具备审计能力</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">19</div><div class="day-title"><strong>错误处理与代码规范</strong><span>让项目更像工程</span></div></div><span class="tag build">Quality</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>自定义异常</li><li>错误码设计</li><li>ruff / black</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>引入 ruff 和 black</li><li>补统一错误码</li><li>补异常处理中间件</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>项目更整洁，错误更可控</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">20</div><div class="day-title"><strong>测试基础</strong><span>为项目加上最小质量保障</span></div></div><span class="tag build">Test</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>pytest 基础</li><li>API 测试</li><li>核心接口测试</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>测试注册</li><li>测试登录</li><li>测试用户列表</li><li>测试文章创建</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>拥有基础测试集</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">21</div><div class="day-title"><strong>Week 3 收口</strong><span>形成管理后台后端原型</span></div></div><span class="tag build">Review</span></summary><div class="day-body"><section class="mini"><h4>必须交付</h4><ul><li>用户登录</li><li>权限控制</li><li>用户管理</li><li>内容管理</li><li>上传接口</li><li>操作日志</li></ul></section><section class="mini"><h4>补充动作</h4><ul><li>整理目录</li><li>补 README</li><li>补 Swagger 说明</li></ul></section><section class="mini"><h4>自检</h4><ul><li>我已经有内容模块</li><li>我已经有上传接口</li><li>我已经接入 Redis</li><li>我已经能记录日志</li></ul></section></div></details>
+          </div>
+        </section>
+
+        <section class="week" id="week4">
+          <div class="week-header">
+            <h3>Week 4 | AI 集成 + Dify + Agent + 收口</h3>
+            <span class="tag ai">AI</span>
+          </div>
+          <p class="week-summary">最后一周不是做“纯 AI demo”，而是把 AI 能力接进文章模块和后台流程里。目标是让你的项目开始具备 AI 应用工程的味道。</p>
+          <div class="week-deliverables">
+            <div class="deliverable">llm_service 完成</div>
+            <div class="deliverable">流式或准流式接口完成</div>
+            <div class="deliverable">Dify API 接入成功</div>
+            <div class="deliverable">AI 任务记录能力完成</div>
+          </div>
+          <div class="days">
+            <details class="day" open><summary><div class="day-left"><div class="day-index">22</div><div class="day-title"><strong>模型 API 基础接入</strong><span>先接一个稳定可用的 AI 能力</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>模型 API 请求结构</li><li>Prompt 基础</li><li>超时与重试</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>封装 llm_service</li><li>实现文章摘要接口</li><li>实现标题生成接口</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>第一个 AI 功能接口可用</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">23</div><div class="day-title"><strong>流式输出基础</strong><span>理解 AI 交互为什么常用 streaming</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>SSE / streaming 基础</li><li>前后端联调方式</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>增加一个流式聊天或流式生成接口</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>初步理解 AI 交互式输出</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">24</div><div class="day-title"><strong>Dify 基础认知与接入</strong><span>用平台能力提升交付效率</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>Dify 应用模式</li><li>Chatflow / Workflow / Agent</li><li>Dify API 调用方式</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>创建一个 Dify 应用</li><li>封装 Dify 调用服务</li><li>打通最小接口</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>FastAPI 成功调用 Dify</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">25</div><div class="day-title"><strong>把 Dify 接到业务模块里</strong><span>让 AI 进入文章模块</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>平台能力和业务接口结合</li><li>结果保存与追踪</li><li>错误回退</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>文章模块增加 AI 摘要</li><li>文章模块增加 AI 改写</li><li>文章模块增加 AI 标题优化</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>AI 功能进入业务流程</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">26</div><div class="day-title"><strong>Agent / 工作流视角理解</strong><span>从概念走向落地场景</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>什么是 Agent</li><li>什么是工具调用</li><li>什么是工作流</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>设计文章摘要 -> 关键词 -> 标题工作流</li><li>输出结构化结果</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>对 Agent 的理解进入落地层</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">27</div><div class="day-title"><strong>AI 任务记录与异步化</strong><span>为 AI 功能增加生产化味道</span></div></div><span class="tag ai">AI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>长耗时任务设计</li><li>任务状态管理</li><li>后台异步执行思路</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>设计 ai_tasks 表</li><li>记录输入、状态、输出、耗时</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>AI 能力具备任务化雏形</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">28</div><div class="day-title"><strong>管理后台前后端联调</strong><span>把能力挂到你熟悉的前端上</span></div></div><span class="tag ai">UI</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>后台接口联调流程</li><li>Token 持久化</li><li>权限菜单思路</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>起一个最小后台页</li><li>接登录、用户列表、文章列表、AI 摘要接口</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>得到一个可演示后台 demo</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">29</div><div class="day-title"><strong>部署基础</strong><span>让项目具备上线前意识</span></div></div><span class="tag ai">Deploy</span></summary><div class="day-body"><section class="mini"><h4>学习内容</h4><ul><li>环境变量管理</li><li>Docker 基础</li><li>反向代理认知</li></ul></section><section class="mini"><h4>实践任务</h4><ul><li>写 Dockerfile</li><li>用 Docker 跑起 FastAPI</li><li>本地模拟部署</li></ul></section><section class="mini"><h4>完成标准</h4><ul><li>项目具备部署基础</li></ul></section></div></details>
+            <details class="day"><summary><div class="day-left"><div class="day-index">30</div><div class="day-title"><strong>收口与复盘</strong><span>把 30 天成果整理成作品雏形</span></div></div><span class="tag ai">Finish</span></summary><div class="day-body"><section class="mini"><h4>最终交付</h4><ul><li>整理项目目录</li><li>完善 README</li><li>总结接口模块</li><li>总结数据库表结构</li></ul></section><section class="mini"><h4>建议产物</h4><ul><li>FastAPI 后端项目</li><li>简单后台前端</li><li>接口说明</li><li>AI 接入说明</li></ul></section><section class="mini"><h4>最终自检</h4><ul><li>我至少接入了一个 AI 平台</li><li>我能从业务模块触发 AI 能力</li><li>我有一个可演示 demo</li></ul></section></div></details>
+          </div>
+        </section>
+
+        <section class="card" id="next">
+          <h3>30 天后下一步</h3>
+          <ul class="check-list">
+            <li>把 AI 任务做成异步队列</li>
+            <li>增加 Redis 限流和缓存策略</li>
+            <li>增加知识库上传和检索</li>
+            <li>增加更完整的角色权限系统</li>
+            <li>增加 Agent 工作流与工具调用</li>
+            <li>增加 Docker Compose 和部署脚本</li>
+          </ul>
+        </section>
+
+        <section class="footer-note">
+          <h3>最后的路线建议</h3>
+          <p>
+            不要把 Python 当作一门单独语言去死学。最适合你的方式，是以一个管理后台项目为主线，把 Python 后端能力、数据库能力和 AI 集成能力一起补起来。这样 30 天后你拿到的不是“看过一堆资料”，而是“有一个能展示的项目”。
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
