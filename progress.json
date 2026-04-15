@@ -1,0 +1,2390 @@
+{
+  "title": "30 天 Python 后端 + AI 集成执行清单",
+  "weeks": [
+    {
+      "id": "week1",
+      "week": 1,
+      "title": "Python + FastAPI 基础",
+      "deliverables": [
+        {
+          "id": "w1_本周交付_1",
+          "text": "FastAPI 项目初始化完成",
+          "done": false
+        },
+        {
+          "id": "w1_本周交付_2",
+          "text": "`users` 基础 CRUD 完成",
+          "done": false
+        },
+        {
+          "id": "w1_本周交付_3",
+          "text": "Swagger 文档可访问",
+          "done": false
+        },
+        {
+          "id": "w1_本周交付_4",
+          "text": "项目完成基础分层",
+          "done": false
+        }
+      ],
+      "days": [
+        {
+          "id": "day01",
+          "day": 1,
+          "title": "Python 基础快速补齐",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d01_学习内容_1",
+                  "text": "变量、函数、模块",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_学习内容_2",
+                  "text": "列表、字典、集合",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_学习内容_3",
+                  "text": "条件、循环",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_学习内容_4",
+                  "text": "文件结构",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_学习内容_5",
+                  "text": "虚拟环境",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d01_实践任务_1",
+                  "text": "建一个 Python 项目目录",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_实践任务_2",
+                  "text": "创建虚拟环境",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_实践任务_3",
+                  "text": "安装 `fastapi`、`uvicorn`",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_实践任务_4",
+                  "text": "写一个 `hello.py`",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d01_完成标准_1",
+                  "text": "能运行 Python 脚本",
+                  "done": false
+                },
+                {
+                  "id": "w1d01_完成标准_2",
+                  "text": "知道怎么管理依赖",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day02",
+          "day": 2,
+          "title": "Python 后端常见写法",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d02_学习内容_1",
+                  "text": "类与对象",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_2",
+                  "text": "异常处理",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_3",
+                  "text": "类型注解",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_4",
+                  "text": "`datetime`",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_5",
+                  "text": "标准库常用模块",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_6",
+                  "text": "`async/await` 异步编程基础",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_学习内容_7",
+                  "text": "`asyncio` 事件循环概念",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d02_实践任务_1",
+                  "text": "写一个简单用户类",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_实践任务_2",
+                  "text": "写一个读取配置模块",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_实践任务_3",
+                  "text": "写一个异常处理示例",
+                  "done": false
+                },
+                {
+                  "id": "w1d02_实践任务_4",
+                  "text": "写一个异步函数示例，对比同步与异步执行",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d02_完成标准_1",
+                  "text": "熟悉 Python 后端代码的基本风格",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day03",
+          "day": 3,
+          "title": "HTTP 和 API 基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d03_学习内容_1",
+                  "text": "HTTP 方法",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_学习内容_2",
+                  "text": "状态码",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_学习内容_3",
+                  "text": "请求头",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_学习内容_4",
+                  "text": "`query / path / body`",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_学习内容_5",
+                  "text": "JSON 接口设计基础",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d03_实践任务_1",
+                  "text": "写 `GET /ping`",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_实践任务_2",
+                  "text": "写 `GET /users/{id}`",
+                  "done": false
+                },
+                {
+                  "id": "w1d03_实践任务_3",
+                  "text": "写 `POST /users`",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d03_完成标准_1",
+                  "text": "理解接口是怎么被设计和消费的",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day04",
+          "day": 4,
+          "title": "FastAPI 路由与参数",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d04_学习内容_1",
+                  "text": "路由定义",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_学习内容_2",
+                  "text": "Query 参数",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_学习内容_3",
+                  "text": "Path 参数",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_学习内容_4",
+                  "text": "Body 参数",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_学习内容_5",
+                  "text": "Pydantic 请求校验",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_学习内容_6",
+                  "text": "CORS 跨域配置",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d04_实践任务_1",
+                  "text": "建立 `routers/` 目录",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_实践任务_2",
+                  "text": "拆分路由文件",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_实践任务_3",
+                  "text": "定义请求模型",
+                  "done": false
+                },
+                {
+                  "id": "w1d04_实践任务_4",
+                  "text": "配置 `CORSMiddleware` 解决跨域",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d04_完成标准_1",
+                  "text": "拥有一个结构化的 FastAPI 小项目",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day05",
+          "day": 5,
+          "title": "响应、异常、文档",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d05_学习内容_1",
+                  "text": "统一响应结构",
+                  "done": false
+                },
+                {
+                  "id": "w1d05_学习内容_2",
+                  "text": "全局异常处理",
+                  "done": false
+                },
+                {
+                  "id": "w1d05_学习内容_3",
+                  "text": "OpenAPI / Swagger 文档",
+                  "done": false
+                },
+                {
+                  "id": "w1d05_学习内容_4",
+                  "text": "状态码规范",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d05_实践任务_1",
+                  "text": "统一接口返回格式",
+                  "done": false
+                },
+                {
+                  "id": "w1d05_实践任务_2",
+                  "text": "处理参数错误和业务错误",
+                  "done": false
+                },
+                {
+                  "id": "w1d05_实践任务_3",
+                  "text": "在 Swagger 中测试接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d05_完成标准_1",
+                  "text": "接口风格更接近正式项目",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day06",
+          "day": 6,
+          "title": "项目分层",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w1d06_学习内容_1",
+                  "text": "`router / service / schema / model` 分层",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_学习内容_2",
+                  "text": "配置管理",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_学习内容_3",
+                  "text": "环境变量",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_学习内容_4",
+                  "text": "`pydantic-settings` 配置管理",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_学习内容_5",
+                  "text": "依赖注入 (`Depends`) 深入使用",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w1d06_实践任务_1",
+                  "text": "建立以下结构：",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_实践任务_2",
+                  "text": "用 `pydantic-settings` 重构配置管理",
+                  "done": false
+                },
+                {
+                  "id": "w1d06_实践任务_3",
+                  "text": "封装公共依赖（分页参数、数据库 Session 等）",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w1d06_完成标准_1",
+                  "text": "项目具备基础工程化结构",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day07",
+          "day": 7,
+          "title": "Week 1 收口",
+          "sections": [
+            {
+              "title": "本日交付",
+              "items": [
+                {
+                  "id": "w1d07_本日交付_1",
+                  "text": "获取用户列表",
+                  "done": false
+                },
+                {
+                  "id": "w1d07_本日交付_2",
+                  "text": "获取单个用户",
+                  "done": false
+                },
+                {
+                  "id": "w1d07_本日交付_3",
+                  "text": "创建用户",
+                  "done": false
+                },
+                {
+                  "id": "w1d07_本日交付_4",
+                  "text": "更新用户",
+                  "done": false
+                },
+                {
+                  "id": "w1d07_本日交付_5",
+                  "text": "删除用户",
+                  "done": false
+                },
+                {
+                  "id": "w1d07_本日交付_6",
+                  "text": "文档可访问",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "w1_Week 1_1",
+          "text": "我能独立写 FastAPI 路由",
+          "done": false
+        },
+        {
+          "id": "w1_Week 1_2",
+          "text": "我会用 Pydantic 做参数校验",
+          "done": false
+        },
+        {
+          "id": "w1_Week 1_3",
+          "text": "我有一个最小 CRUD API",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "week2",
+      "week": 2,
+      "title": "MySQL + 后台核心 API 能力",
+      "deliverables": [
+        {
+          "id": "w2_本周交付_1",
+          "text": "`FastAPI + MySQL + SQLAlchemy` 跑通",
+          "done": false
+        },
+        {
+          "id": "w2_本周交付_2",
+          "text": "注册 / 登录 / JWT 鉴权完成",
+          "done": false
+        },
+        {
+          "id": "w2_本周交付_3",
+          "text": "基础角色权限完成",
+          "done": false
+        },
+        {
+          "id": "w2_本周交付_4",
+          "text": "分页、过滤、排序能力完成",
+          "done": false
+        }
+      ],
+      "days": [
+        {
+          "id": "day08",
+          "day": 8,
+          "title": "MySQL 基础入门",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d08_学习内容_1",
+                  "text": "数据库、表、字段",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_学习内容_2",
+                  "text": "主键、唯一键",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_学习内容_3",
+                  "text": "基础 SQL",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_学习内容_4",
+                  "text": "插入、查询、更新、删除",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d08_实践任务_1",
+                  "text": "安装 MySQL",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_实践任务_2",
+                  "text": "创建数据库 `ai_admin_demo`",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_实践任务_3",
+                  "text": "创建 `users` 表",
+                  "done": false
+                },
+                {
+                  "id": "w2d08_实践任务_4",
+                  "text": "手写 SQL 完成 CRUD",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d08_完成标准_1",
+                  "text": "会写最基本 SQL",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day09",
+          "day": 9,
+          "title": "表设计基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d09_学习内容_1",
+                  "text": "一对多关系",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_学习内容_2",
+                  "text": "字段类型选择",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_学习内容_3",
+                  "text": "时间字段",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_学习内容_4",
+                  "text": "逻辑删除",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_学习内容_5",
+                  "text": "审计字段",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d09_实践任务_1",
+                  "text": "设计 `users`",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_实践任务_2",
+                  "text": "设计 `roles`",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_实践任务_3",
+                  "text": "设计 `articles`",
+                  "done": false
+                },
+                {
+                  "id": "w2d09_实践任务_4",
+                  "text": "设计 `operation_logs`",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d09_完成标准_1",
+                  "text": "形成一版数据库草图",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day10",
+          "day": 10,
+          "title": "SQLAlchemy 入门",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d10_学习内容_1",
+                  "text": "ORM 基础",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_学习内容_2",
+                  "text": "Model 定义",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_学习内容_3",
+                  "text": "Session",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_学习内容_4",
+                  "text": "查询与提交",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_学习内容_5",
+                  "text": "数据库连接池配置",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_学习内容_6",
+                  "text": "`get_db()` 依赖注入最佳实践",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d10_实践任务_1",
+                  "text": "把 `users` 表映射成 ORM 模型",
+                  "done": false
+                },
+                {
+                  "id": "w2d10_实践任务_2",
+                  "text": "用 ORM 改写用户 CRUD",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d10_完成标准_1",
+                  "text": "`FastAPI + MySQL + SQLAlchemy` 跑通",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day11",
+          "day": 11,
+          "title": "Alembic 迁移",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d11_学习内容_1",
+                  "text": "migration 的价值",
+                  "done": false
+                },
+                {
+                  "id": "w2d11_学习内容_2",
+                  "text": "Alembic 初始化",
+                  "done": false
+                },
+                {
+                  "id": "w2d11_学习内容_3",
+                  "text": "生成迁移",
+                  "done": false
+                },
+                {
+                  "id": "w2d11_学习内容_4",
+                  "text": "执行迁移",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d11_实践任务_1",
+                  "text": "为 `users`、`roles` 表生成迁移脚本",
+                  "done": false
+                },
+                {
+                  "id": "w2d11_实践任务_2",
+                  "text": "执行迁移",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d11_完成标准_1",
+                  "text": "学会正规管理表结构变更",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day12",
+          "day": 12,
+          "title": "登录与密码处理",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d12_学习内容_1",
+                  "text": "用户注册",
+                  "done": false
+                },
+                {
+                  "id": "w2d12_学习内容_2",
+                  "text": "密码加密",
+                  "done": false
+                },
+                {
+                  "id": "w2d12_学习内容_3",
+                  "text": "登录接口",
+                  "done": false
+                },
+                {
+                  "id": "w2d12_学习内容_4",
+                  "text": "JWT 基础",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d12_实践任务_1",
+                  "text": "实现注册接口",
+                  "done": false
+                },
+                {
+                  "id": "w2d12_实践任务_2",
+                  "text": "实现登录接口",
+                  "done": false
+                },
+                {
+                  "id": "w2d12_实践任务_3",
+                  "text": "返回 access token",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d12_完成标准_1",
+                  "text": "能完成基本登录流程",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day13",
+          "day": 13,
+          "title": "鉴权与权限",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d13_学习内容_1",
+                  "text": "依赖注入方式鉴权",
+                  "done": false
+                },
+                {
+                  "id": "w2d13_学习内容_2",
+                  "text": "当前用户获取",
+                  "done": false
+                },
+                {
+                  "id": "w2d13_学习内容_3",
+                  "text": "角色权限基础",
+                  "done": false
+                },
+                {
+                  "id": "w2d13_学习内容_4",
+                  "text": "权限拦截思路",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d13_实践任务_1",
+                  "text": "实现登录校验依赖",
+                  "done": false
+                },
+                {
+                  "id": "w2d13_实践任务_2",
+                  "text": "增加 `admin` / `editor` 两种角色",
+                  "done": false
+                },
+                {
+                  "id": "w2d13_实践任务_3",
+                  "text": "限制管理员接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d13_完成标准_1",
+                  "text": "后台具备最基础权限能力",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day14",
+          "day": 14,
+          "title": "分页、过滤、排序",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w2d14_学习内容_1",
+                  "text": "列表接口设计",
+                  "done": false
+                },
+                {
+                  "id": "w2d14_学习内容_2",
+                  "text": "分页参数设计",
+                  "done": false
+                },
+                {
+                  "id": "w2d14_学习内容_3",
+                  "text": "条件过滤",
+                  "done": false
+                },
+                {
+                  "id": "w2d14_学习内容_4",
+                  "text": "排序",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w2d14_实践任务_1",
+                  "text": "为用户列表增加分页",
+                  "done": false
+                },
+                {
+                  "id": "w2d14_实践任务_2",
+                  "text": "为用户列表增加关键词搜索",
+                  "done": false
+                },
+                {
+                  "id": "w2d14_实践任务_3",
+                  "text": "为用户列表增加创建时间排序",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w2d14_完成标准_1",
+                  "text": "拥有一个像样的后台列表接口",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "w2_Week 2_1",
+          "text": "我已经接入 MySQL",
+          "done": false
+        },
+        {
+          "id": "w2_Week 2_2",
+          "text": "我已经做出注册和登录",
+          "done": false
+        },
+        {
+          "id": "w2_Week 2_3",
+          "text": "我理解 JWT 的基本使用",
+          "done": false
+        },
+        {
+          "id": "w2_Week 2_4",
+          "text": "我能写分页列表接口",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "week3",
+      "week": 3,
+      "title": "工程化 + 上传 + Redis + 审计",
+      "deliverables": [
+        {
+          "id": "w3_本周交付_1",
+          "text": "`articles` 内容模块完成",
+          "done": false
+        },
+        {
+          "id": "w3_本周交付_2",
+          "text": "上传接口完成",
+          "done": false
+        },
+        {
+          "id": "w3_本周交付_3",
+          "text": "Redis 缓存完成",
+          "done": false
+        },
+        {
+          "id": "w3_本周交付_4",
+          "text": "操作日志完成",
+          "done": false
+        },
+        {
+          "id": "w3_本周交付_5",
+          "text": "测试与代码规范基础接入完成",
+          "done": false
+        }
+      ],
+      "days": [
+        {
+          "id": "day15",
+          "day": 15,
+          "title": "内容管理模块",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d15_学习内容_1",
+                  "text": "后台模块设计",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_学习内容_2",
+                  "text": "CRUD 模块化复用",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_学习内容_3",
+                  "text": "业务字段设计",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d15_实践任务_1",
+                  "text": "新增 `articles` 模块",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_实践任务_2",
+                  "text": "支持文章创建",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_实践任务_3",
+                  "text": "支持文章编辑",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_实践任务_4",
+                  "text": "支持文章删除",
+                  "done": false
+                },
+                {
+                  "id": "w3d15_实践任务_5",
+                  "text": "支持文章列表查询",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d15_完成标准_1",
+                  "text": "管理后台第二个业务模块完成",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day16",
+          "day": 16,
+          "title": "文件上传",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d16_学习内容_1",
+                  "text": "Multipart 上传",
+                  "done": false
+                },
+                {
+                  "id": "w3d16_学习内容_2",
+                  "text": "文件存储策略",
+                  "done": false
+                },
+                {
+                  "id": "w3d16_学习内容_3",
+                  "text": "文件元数据记录",
+                  "done": false
+                },
+                {
+                  "id": "w3d16_学习内容_4",
+                  "text": "安全注意事项",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d16_实践任务_1",
+                  "text": "实现图片或文档上传接口",
+                  "done": false
+                },
+                {
+                  "id": "w3d16_实践任务_2",
+                  "text": "创建 `files` 表",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d16_完成标准_1",
+                  "text": "上传能力完成第一版",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day17",
+          "day": 17,
+          "title": "Redis 基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d17_学习内容_1",
+                  "text": "Redis 常见数据结构",
+                  "done": false
+                },
+                {
+                  "id": "w3d17_学习内容_2",
+                  "text": "缓存场景",
+                  "done": false
+                },
+                {
+                  "id": "w3d17_学习内容_3",
+                  "text": "token / session 辅助场景",
+                  "done": false
+                },
+                {
+                  "id": "w3d17_学习内容_4",
+                  "text": "验证码、限流场景认知",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d17_实践任务_1",
+                  "text": "跑通 Redis",
+                  "done": false
+                },
+                {
+                  "id": "w3d17_实践任务_2",
+                  "text": "给一个热点列表接口加缓存",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d17_完成标准_1",
+                  "text": "第一个缓存接口完成",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day18",
+          "day": 18,
+          "title": "操作日志与审计",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d18_学习内容_1",
+                  "text": "后台系统为什么要日志",
+                  "done": false
+                },
+                {
+                  "id": "w3d18_学习内容_2",
+                  "text": "用户行为审计",
+                  "done": false
+                },
+                {
+                  "id": "w3d18_学习内容_3",
+                  "text": "操作记录设计",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d18_实践任务_1",
+                  "text": "新增 `operation_logs` 表",
+                  "done": false
+                },
+                {
+                  "id": "w3d18_实践任务_2",
+                  "text": "记录新增、删除、更新操作",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d18_完成标准_1",
+                  "text": "初步具备后台审计能力",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day19",
+          "day": 19,
+          "title": "错误处理与代码规范",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d19_学习内容_1",
+                  "text": "自定义异常",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_学习内容_2",
+                  "text": "错误码设计",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_学习内容_3",
+                  "text": "代码检查",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_学习内容_4",
+                  "text": "格式化工具",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_学习内容_5",
+                  "text": "中间件开发（请求日志、耗时统计）",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d19_实践任务_1",
+                  "text": "引入 `ruff`",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_实践任务_2",
+                  "text": "引入 `black`",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_实践任务_3",
+                  "text": "整理统一错误码",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_实践任务_4",
+                  "text": "补充异常处理中间件",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_实践任务_5",
+                  "text": "编写请求耗时统计中间件",
+                  "done": false
+                },
+                {
+                  "id": "w3d19_实践任务_6",
+                  "text": "编写请求日志中间件",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d19_完成标准_1",
+                  "text": "项目结构更整洁，错误更可控",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day20",
+          "day": 20,
+          "title": "测试基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w3d20_学习内容_1",
+                  "text": "`pytest` 基础",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_学习内容_2",
+                  "text": "API 测试",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_学习内容_3",
+                  "text": "核心接口测试",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_学习内容_4",
+                  "text": "安全基础：SQL 注入防范原理",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_学习内容_5",
+                  "text": "接口限流（Rate Limiting）",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_学习内容_6",
+                  "text": "敏感数据脱敏（日志中不打印密码/token）",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w3d20_实践任务_1",
+                  "text": "测试注册接口",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_实践任务_2",
+                  "text": "测试登录接口",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_实践任务_3",
+                  "text": "测试用户列表接口",
+                  "done": false
+                },
+                {
+                  "id": "w3d20_实践任务_4",
+                  "text": "测试文章创建接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w3d20_完成标准_1",
+                  "text": "拥有基础测试集",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day21",
+          "day": 21,
+          "title": "Week 3 收口",
+          "sections": [
+            {
+              "title": "本日交付",
+              "items": [
+                {
+                  "id": "w3d21_本日交付_1",
+                  "text": "用户登录",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_2",
+                  "text": "权限控制",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_3",
+                  "text": "用户管理",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_4",
+                  "text": "内容管理",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_5",
+                  "text": "上传接口",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_6",
+                  "text": "操作日志",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_7",
+                  "text": "README 基础版",
+                  "done": false
+                },
+                {
+                  "id": "w3d21_本日交付_8",
+                  "text": "Swagger 文档可演示",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "w3_Week 3_1",
+          "text": "我已经有内容模块",
+          "done": false
+        },
+        {
+          "id": "w3_Week 3_2",
+          "text": "我已经有上传接口",
+          "done": false
+        },
+        {
+          "id": "w3_Week 3_3",
+          "text": "我已经接入 Redis",
+          "done": false
+        },
+        {
+          "id": "w3_Week 3_4",
+          "text": "我已经能记录操作日志",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "week4",
+      "week": 4,
+      "title": "AI 集成 + Dify + Agent + 收口",
+      "deliverables": [
+        {
+          "id": "w4_本周交付_1",
+          "text": "一个独立的 `llm_service`",
+          "done": false
+        },
+        {
+          "id": "w4_本周交付_2",
+          "text": "一个流式或准流式 AI 接口",
+          "done": false
+        },
+        {
+          "id": "w4_本周交付_3",
+          "text": "Dify API 接入成功",
+          "done": false
+        },
+        {
+          "id": "w4_本周交付_4",
+          "text": "文章模块具备 AI 处理能力",
+          "done": false
+        },
+        {
+          "id": "w4_本周交付_5",
+          "text": "AI 任务记录能力完成",
+          "done": false
+        }
+      ],
+      "days": [
+        {
+          "id": "day22",
+          "day": 22,
+          "title": "模型 API 基础接入",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d22_学习内容_1",
+                  "text": "模型 API 请求结构",
+                  "done": false
+                },
+                {
+                  "id": "w4d22_学习内容_2",
+                  "text": "Prompt 基础",
+                  "done": false
+                },
+                {
+                  "id": "w4d22_学习内容_3",
+                  "text": "超时与重试",
+                  "done": false
+                },
+                {
+                  "id": "w4d22_学习内容_4",
+                  "text": "成本意识",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d22_实践任务_1",
+                  "text": "封装一个 `llm_service`",
+                  "done": false
+                },
+                {
+                  "id": "w4d22_实践任务_2",
+                  "text": "实现文章摘要接口",
+                  "done": false
+                },
+                {
+                  "id": "w4d22_实践任务_3",
+                  "text": "实现标题生成接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d22_完成标准_1",
+                  "text": "第一个 AI 功能接口可用",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day23",
+          "day": 23,
+          "title": "流式输出基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d23_学习内容_1",
+                  "text": "SSE / streaming 基础认知",
+                  "done": false
+                },
+                {
+                  "id": "w4d23_学习内容_2",
+                  "text": "前后端联调方式",
+                  "done": false
+                },
+                {
+                  "id": "w4d23_学习内容_3",
+                  "text": "流式输出的交互价值",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d23_实践任务_1",
+                  "text": "增加一个流式聊天或流式生成接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d23_完成标准_1",
+                  "text": "初步理解 AI 交互式输出",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day24",
+          "day": 24,
+          "title": "Dify 基础认知与接入",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d24_学习内容_1",
+                  "text": "Dify 应用模式",
+                  "done": false
+                },
+                {
+                  "id": "w4d24_学习内容_2",
+                  "text": "Chatflow / Workflow / Agent 基本概念",
+                  "done": false
+                },
+                {
+                  "id": "w4d24_学习内容_3",
+                  "text": "Dify API 调用方式",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d24_实践任务_1",
+                  "text": "创建一个 Dify 应用",
+                  "done": false
+                },
+                {
+                  "id": "w4d24_实践任务_2",
+                  "text": "在 Python 中封装 Dify 调用服务",
+                  "done": false
+                },
+                {
+                  "id": "w4d24_实践任务_3",
+                  "text": "打通一个最小调用接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d24_完成标准_1",
+                  "text": "FastAPI 成功调用 Dify",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day25",
+          "day": 25,
+          "title": "把 Dify 接到业务模块里",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d25_学习内容_1",
+                  "text": "平台能力和业务接口如何结合",
+                  "done": false
+                },
+                {
+                  "id": "w4d25_学习内容_2",
+                  "text": "结果保存与追踪",
+                  "done": false
+                },
+                {
+                  "id": "w4d25_学习内容_3",
+                  "text": "错误回退",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d25_实践任务_1",
+                  "text": "在 `articles` 模块中增加 AI 摘要",
+                  "done": false
+                },
+                {
+                  "id": "w4d25_实践任务_2",
+                  "text": "在 `articles` 模块中增加 AI 改写",
+                  "done": false
+                },
+                {
+                  "id": "w4d25_实践任务_3",
+                  "text": "在 `articles` 模块中增加 AI 标题优化",
+                  "done": false
+                },
+                {
+                  "id": "w4d25_实践任务_4",
+                  "text": "可选：把结果保存到数据库",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d25_完成标准_1",
+                  "text": "AI 功能进入正式业务流程",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day26",
+          "day": 26,
+          "title": "Agent / 工作流视角理解",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d26_学习内容_1",
+                  "text": "什么是 Agent",
+                  "done": false
+                },
+                {
+                  "id": "w4d26_学习内容_2",
+                  "text": "什么是工具调用",
+                  "done": false
+                },
+                {
+                  "id": "w4d26_学习内容_3",
+                  "text": "什么是工作流",
+                  "done": false
+                },
+                {
+                  "id": "w4d26_学习内容_4",
+                  "text": "适合业务系统的 Agent 场景",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d26_实践任务_1",
+                  "text": "设计一个简单工作流：",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d26_完成标准_1",
+                  "text": "对 Agent 的理解进入落地场景",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day27",
+          "day": 27,
+          "title": "AI 任务记录与异步化",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d27_学习内容_1",
+                  "text": "长耗时任务设计",
+                  "done": false
+                },
+                {
+                  "id": "w4d27_学习内容_2",
+                  "text": "任务状态管理",
+                  "done": false
+                },
+                {
+                  "id": "w4d27_学习内容_3",
+                  "text": "后台异步执行思路",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d27_实践任务_1",
+                  "text": "设计 `ai_tasks` 表",
+                  "done": false
+                },
+                {
+                  "id": "w4d27_实践任务_2",
+                  "text": "每次 AI 调用写入任务记录",
+                  "done": false
+                },
+                {
+                  "id": "w4d27_实践任务_3",
+                  "text": "记录输入、状态、输出、耗时",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d27_完成标准_1",
+                  "text": "AI 能力具备任务化雏形",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day28",
+          "day": 28,
+          "title": "管理后台前后端联调",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d28_学习内容_1",
+                  "text": "管理后台接口联调流程",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_学习内容_2",
+                  "text": "Token 持久化",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_学习内容_3",
+                  "text": "权限菜单思路",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_学习内容_4",
+                  "text": "文件上传联调",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d28_实践任务_1",
+                  "text": "用 `Vue` 或 `React` 起一个最小后台页",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_实践任务_2",
+                  "text": "接登录接口",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_实践任务_3",
+                  "text": "接用户列表接口",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_实践任务_4",
+                  "text": "接文章列表接口",
+                  "done": false
+                },
+                {
+                  "id": "w4d28_实践任务_5",
+                  "text": "接 AI 摘要接口",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d28_完成标准_1",
+                  "text": "第一个真正意义上的管理后台 demo",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day29",
+          "day": 29,
+          "title": "部署基础",
+          "sections": [
+            {
+              "title": "学习内容",
+              "items": [
+                {
+                  "id": "w4d29_学习内容_1",
+                  "text": "环境变量管理",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_学习内容_2",
+                  "text": "Docker 基础",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_学习内容_3",
+                  "text": "生产启动方式",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_学习内容_4",
+                  "text": "反向代理认知",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_学习内容_5",
+                  "text": "`docker-compose` 编排多服务",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "实践任务",
+              "items": [
+                {
+                  "id": "w4d29_实践任务_1",
+                  "text": "为项目写 `Dockerfile`",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_实践任务_2",
+                  "text": "编写 `docker-compose.yml`（MySQL + Redis + FastAPI）",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_实践任务_3",
+                  "text": "用 Docker 跑起 FastAPI",
+                  "done": false
+                },
+                {
+                  "id": "w4d29_实践任务_4",
+                  "text": "本地模拟部署",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "完成标准",
+              "items": [
+                {
+                  "id": "w4d29_完成标准_1",
+                  "text": "项目具备部署基础",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "day30",
+          "day": 30,
+          "title": "收口与复盘",
+          "sections": [
+            {
+              "title": "最终交付",
+              "items": [
+                {
+                  "id": "w4d30_最终交付_1",
+                  "text": "整理项目目录",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终交付_2",
+                  "text": "完善 README",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终交付_3",
+                  "text": "列出接口模块",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终交付_4",
+                  "text": "总结数据库表结构",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终交付_5",
+                  "text": "总结 AI 接入方式",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终交付_6",
+                  "text": "记录后续优化方向",
+                  "done": false
+                }
+              ]
+            },
+            {
+              "title": "最终产物建议",
+              "items": [
+                {
+                  "id": "w4d30_最终产物_1",
+                  "text": "一个 FastAPI 后端项目",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终产物_2",
+                  "text": "一个简单后台前端",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终产物_3",
+                  "text": "一份接口说明",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终产物_4",
+                  "text": "一份数据库设计说明",
+                  "done": false
+                },
+                {
+                  "id": "w4d30_最终产物_5",
+                  "text": "一份 AI 接入说明",
+                  "done": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "w4_Week 4_1",
+          "text": "我至少接入了一个 AI 平台",
+          "done": false
+        },
+        {
+          "id": "w4_Week 4_2",
+          "text": "我能从业务模块触发 AI 能力",
+          "done": false
+        },
+        {
+          "id": "w4_Week 4_3",
+          "text": "我有 AI 调用记录或任务记录",
+          "done": false
+        },
+        {
+          "id": "w4_Week 4_4",
+          "text": "我有一个可演示的后台 demo",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "id": "使用规则",
+      "title": "使用规则",
+      "items": [],
+      "sections": [
+        {
+          "title": "每天固定节奏",
+          "items": []
+        },
+        {
+          "title": "每天至少要有一个输出",
+          "items": [
+            {
+              "id": "extra_每天至少要有_1",
+              "text": "一段代码",
+              "done": false
+            },
+            {
+              "id": "extra_每天至少要有_2",
+              "text": "一个接口",
+              "done": false
+            },
+            {
+              "id": "extra_每天至少要有_3",
+              "text": "一张表",
+              "done": false
+            },
+            {
+              "id": "extra_每天至少要有_4",
+              "text": "一页笔记",
+              "done": false
+            },
+            {
+              "id": "extra_每天至少要有_5",
+              "text": "一个可运行功能",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "学习优先级",
+          "items": [
+            {
+              "id": "extra_学习优先级_1",
+              "text": "路由",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_2",
+              "text": "参数校验",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_3",
+              "text": "数据库",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_4",
+              "text": "用户系统",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_5",
+              "text": "权限",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_6",
+              "text": "上传",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_7",
+              "text": "日志",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_8",
+              "text": "分页",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_9",
+              "text": "Dify",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_10",
+              "text": "Agent",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_11",
+              "text": "Workflow",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_12",
+              "text": "流式输出",
+              "done": false
+            },
+            {
+              "id": "extra_学习优先级_13",
+              "text": "AI 任务记录",
+              "done": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "推荐项目结构",
+      "title": "推荐项目结构",
+      "items": []
+    },
+    {
+      "id": "建议优先实现的数据表",
+      "title": "建议优先实现的数据表",
+      "items": [],
+      "sections": [
+        {
+          "title": "第一批表",
+          "items": [
+            {
+              "id": "extra_第一批表_1",
+              "text": "`users`",
+              "done": false
+            },
+            {
+              "id": "extra_第一批表_2",
+              "text": "`roles`",
+              "done": false
+            },
+            {
+              "id": "extra_第一批表_3",
+              "text": "`articles`",
+              "done": false
+            },
+            {
+              "id": "extra_第一批表_4",
+              "text": "`files`",
+              "done": false
+            },
+            {
+              "id": "extra_第一批表_5",
+              "text": "`operation_logs`",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "第二批表",
+          "items": [
+            {
+              "id": "extra_第二批表_1",
+              "text": "`ai_tasks`",
+              "done": false
+            },
+            {
+              "id": "extra_第二批表_2",
+              "text": "`ai_provider_configs`",
+              "done": false
+            },
+            {
+              "id": "extra_第二批表_3",
+              "text": "`chat_sessions`",
+              "done": false
+            },
+            {
+              "id": "extra_第二批表_4",
+              "text": "`chat_messages`",
+              "done": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "这_30_天不建议做的事",
+      "title": "这 30 天不建议做的事",
+      "items": [
+        {
+          "id": "extra_这_30_天不建议做_1",
+          "text": "不要一开始就学 Django 全家桶",
+          "done": false
+        },
+        {
+          "id": "extra_这_30_天不建议做_2",
+          "text": "不要一开始就学复杂 RAG",
+          "done": false
+        },
+        {
+          "id": "extra_这_30_天不建议做_3",
+          "text": "不要一开始就做模型训练和微调",
+          "done": false
+        },
+        {
+          "id": "extra_这_30_天不建议做_4",
+          "text": "不要一开始就追求复杂微服务架构",
+          "done": false
+        },
+        {
+          "id": "extra_这_30_天不建议做_5",
+          "text": "不要只看教程不写代码",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "30_天后下一步怎么走",
+      "title": "30 天后下一步怎么走",
+      "items": [
+        {
+          "id": "extra_30_天后下一步怎么_1",
+          "text": "把 AI 任务做成异步队列",
+          "done": false
+        },
+        {
+          "id": "extra_30_天后下一步怎么_2",
+          "text": "增加 Redis 限流和缓存策略",
+          "done": false
+        },
+        {
+          "id": "extra_30_天后下一步怎么_3",
+          "text": "增加知识库上传和检索",
+          "done": false
+        },
+        {
+          "id": "extra_30_天后下一步怎么_4",
+          "text": "增加更完整的角色权限系统",
+          "done": false
+        },
+        {
+          "id": "extra_30_天后下一步怎么_5",
+          "text": "增加 Agent 工作流与工具调用",
+          "done": false
+        },
+        {
+          "id": "extra_30_天后下一步怎么_6",
+          "text": "增加 Docker Compose 和部署脚本",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "最后一条提醒",
+      "title": "最后一条提醒",
+      "items": []
+    }
+  ],
+  "stats": {
+    "total": 328,
+    "done": 0
+  }
+}

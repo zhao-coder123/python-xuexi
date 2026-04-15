@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30天 Python 学习进度</title>
+<style>
+  :root {
+    --primary: #4f46e5;
+    --primary-light: #e0e7ff;
+    --success: #10b981;
+    --success-light: #d1fae5;
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --text: #1f2937;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding-bottom: 60px;
+  }
+
+  /* 顶部 */
+  .header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff;
+    padding: 28px 20px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(79, 70, 229, 0.3);
+  }
+  .header h1 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+
+  /* 进度条 */
+  .progress-wrap {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    height: 22px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #34d399, #10b981);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+    min-width: 0;
+  }
+  .progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  .branch-info {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  /* 容器 */
+  .container { max-width: 780px; margin: 0 auto; padding: 16px; }
+
+  /* Week 卡片 */
+  .week-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .week-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+    background: #fafafa;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .week-header:hover { background: #f0f0f5; }
+  .week-title { font-size: 16px; font-weight: 600; }
+  .week-stats {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .week-stats .mini-bar {
+    width: 60px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .week-stats .mini-fill {
+    height: 100%;
+    background: var(--success);
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+  .week-body { padding: 0; display: none; }
+  .week-card.open .week-body { display: block; }
+  .week-header .arrow {
+    transition: transform 0.2s;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-left: 12px;
+  }
+  .week-card.open .arrow { transform: rotate(90deg); }
+
+  /* 交付列表 */
+  .deliverables {
+    padding: 12px 18px;
+    background: var(--primary-light);
+    border-bottom: 1px solid var(--border);
+  }
+  .deliverables-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+
+  /* Day 区块 */
+  .day-block { border-bottom: 1px solid var(--border); }
+  .day-block:last-child { border-bottom: none; }
+  .day-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .day-header:hover { background: #f9fafb; }
+  .day-title {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .day-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .day-body { padding: 0 18px 12px; display: none; }
+  .day-block.open .day-body { display: block; }
+
+  /* Start Day 按钮 */
+  .btn-start {
+    font-size: 12px;
+    padding: 4px 10px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .btn-start:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  /* Section */
+  .section { margin-bottom: 10px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    padding-left: 2px;
+  }
+
+  /* Checkbox 项 */
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  .item:hover { background: #f9fafb; }
+  .item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--primary);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .item-text { font-size: 14px; flex: 1; }
+  .item.done .item-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+  }
+
+  /* Review */
+  .review-section {
+    padding: 12px 18px;
+    background: var(--success-light);
+    border-top: 1px solid var(--border);
+  }
+  .review-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #059669;
+    margin-bottom: 6px;
+  }
+
+  /* Extras */
+  .extras-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .extras-header {
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+    background: #fafafa;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .extras-header:hover { background: #f0f0f5; }
+  .extras-title { font-size: 15px; font-weight: 600; }
+  .extras-body { padding: 12px 18px; display: none; }
+  .extras-card.open .extras-body { display: block; }
+  .extras-card.open .arrow { transform: rotate(90deg); }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1f2937;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* Loading */
+  .loading {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  /* 全选按钮 */
+  .select-all-btn {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .select-all-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 17px; }
+    .container { padding: 10px; }
+    .week-header { padding: 12px 14px; }
+    .day-header { padding: 10px 14px; }
+    .day-body { padding: 0 14px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>30 天 Python 后端 + AI 集成</h1>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+    <div class="progress-text" id="progressText">加载中...</div>
+  </div>
+  <div class="branch-info" id="branchInfo"></div>
+</div>
+
+<div class="container" id="app">
+  <div class="loading">加载中...</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = '';
+let progressData = null;
+
+// ---------- Toast ----------
+function showToast(msg, duration = 2000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ---------- 进度条 ----------
+function updateProgressBar(stats) {
+  const pct = stats.total ? Math.round((stats.done / stats.total) * 100) : 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${stats.done} / ${stats.total}  (${pct}%)`;
+}
+
+// ---------- 计算局部统计 ----------
+function calcStats(items) {
+  let total = 0, done = 0;
+  for (const item of items) {
+    total++;
+    if (item.done) done++;
+  }
+  return { total, done };
+}
+
+function weekItems(week) {
+  const items = [];
+  (week.deliverables || []).forEach(i => items.push(i));
+  (week.days || []).forEach(d => {
+    (d.sections || []).forEach(s => {
+      (s.items || []).forEach(i => items.push(i));
+    });
+  });
+  (week.review || []).forEach(i => items.push(i));
+  return items;
+}
+
+function dayItems(day) {
+  const items = [];
+  (day.sections || []).forEach(s => {
+    (s.items || []).forEach(i => items.push(i));
+  });
+  return items;
+}
+
+// ---------- 渲染 ----------
+function renderItem(item) {
+  const div = document.createElement('label');
+  div.className = 'item' + (item.done ? ' done' : '');
+  div.innerHTML = `
+    <input type="checkbox" ${item.done ? 'checked' : ''} data-id="${item.id}">
+    <span class="item-text">${escapeHtml(item.text)}</span>
+  `;
+  div.querySelector('input').addEventListener('change', (e) => {
+    toggleItem(item.id, e.target.checked, div);
+  });
+  return div;
+}
+
+function renderSection(sec) {
+  const div = document.createElement('div');
+  div.className = 'section';
+  div.innerHTML = `<div class="section-title">${escapeHtml(sec.title)}</div>`;
+  (sec.items || []).forEach(item => div.appendChild(renderItem(item)));
+  return div;
+}
+
+function renderDay(day, weekNum) {
+  const block = document.createElement('div');
+  block.className = 'day-block';
+  const items = dayItems(day);
+  const stats = calcStats(items);
+  const allDone = stats.total > 0 && stats.done === stats.total;
+
+  const header = document.createElement('div');
+  header.className = 'day-header';
+  header.innerHTML = `
+    <div class="day-title">
+      <span class="arrow">&#9654;</span>
+      <span>${allDone ? '&#9989;' : ''} Day ${day.day} | ${escapeHtml(day.title)}</span>
+    </div>
+    <div class="day-controls">
+      <span style="font-size:12px;color:var(--text-secondary)">${stats.done}/${stats.total}</span>
+      <button class="btn-start" onclick="event.stopPropagation(); startDay(${day.day})" title="创建分支和文件夹">开始学习</button>
+    </div>
+  `;
+  header.addEventListener('click', () => block.classList.toggle('open'));
+
+  const body = document.createElement('div');
+  body.className = 'day-body';
+  (day.sections || []).forEach(sec => body.appendChild(renderSection(sec)));
+
+  block.appendChild(header);
+  block.appendChild(body);
+  return block;
+}
+
+function renderWeek(week) {
+  const card = document.createElement('div');
+  card.className = 'week-card';
+  const items = weekItems(week);
+  const stats = calcStats(items);
+  const pct = stats.total ? Math.round((stats.done / stats.total) * 100) : 0;
+
+  const header = document.createElement('div');
+  header.className = 'week-header';
+  header.innerHTML = `
+    <div class="week-title">Week ${week.week} | ${escapeHtml(week.title)}</div>
+    <div class="week-stats">
+      <span>${stats.done}/${stats.total}</span>
+      <div class="mini-bar"><div class="mini-fill" style="width:${pct}%"></div></div>
+      <span class="arrow">&#9654;</span>
+    </div>
+  `;
+  header.addEventListener('click', () => card.classList.toggle('open'));
+
+  const body = document.createElement('div');
+  body.className = 'week-body';
+
+  // 本周交付
+  if (week.deliverables && week.deliverables.length) {
+    const del = document.createElement('div');
+    del.className = 'deliverables';
+    del.innerHTML = '<div class="deliverables-title">本周交付</div>';
+    week.deliverables.forEach(item => del.appendChild(renderItem(item)));
+    body.appendChild(del);
+  }
+
+  // Days
+  (week.days || []).forEach(day => body.appendChild(renderDay(day, week.week)));
+
+  // Week 自检
+  if (week.review && week.review.length) {
+    const rev = document.createElement('div');
+    rev.className = 'review-section';
+    rev.innerHTML = '<div class="review-title">Week 自检</div>';
+    week.review.forEach(item => rev.appendChild(renderItem(item)));
+    body.appendChild(rev);
+  }
+
+  card.appendChild(header);
+  card.appendChild(body);
+  return card;
+}
+
+function renderExtras(extra) {
+  const card = document.createElement('div');
+  card.className = 'extras-card';
+
+  const allItems = [];
+  (extra.items || []).forEach(i => allItems.push(i));
+  (extra.sections || []).forEach(s => (s.items || []).forEach(i => allItems.push(i)));
+  if (allItems.length === 0) return null;
+
+  const stats = calcStats(allItems);
+
+  const header = document.createElement('div');
+  header.className = 'extras-header';
+  header.innerHTML = `
+    <span class="extras-title">${escapeHtml(extra.title)}</span>
+    <div class="week-stats">
+      <span>${stats.done}/${stats.total}</span>
+      <span class="arrow">&#9654;</span>
+    </div>
+  `;
+  header.addEventListener('click', () => card.classList.toggle('open'));
+
+  const body = document.createElement('div');
+  body.className = 'extras-body';
+
+  if (extra.items && extra.items.length) {
+    extra.items.forEach(item => body.appendChild(renderItem(item)));
+  }
+  if (extra.sections) {
+    extra.sections.forEach(sec => body.appendChild(renderSection(sec)));
+  }
+
+  card.appendChild(header);
+  card.appendChild(body);
+  return card;
+}
+
+function render(data) {
+  progressData = data;
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  updateProgressBar(data.stats || { total: 0, done: 0 });
+
+  (data.weeks || []).forEach(week => app.appendChild(renderWeek(week)));
+  (data.extras || []).forEach(extra => {
+    const el = renderExtras(extra);
+    if (el) app.appendChild(el);
+  });
+}
+
+// ---------- API 调用 ----------
+async function fetchProgress() {
+  const res = await fetch(API + '/api/progress');
+  const data = await res.json();
+  render(data);
+}
+
+async function toggleItem(itemId, done, labelEl) {
+  labelEl.classList.toggle('done', done);
+  try {
+    const res = await fetch(API + '/api/progress/' + encodeURIComponent(itemId), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ done }),
+    });
+    const result = await res.json();
+    if (result.stats) {
+      updateProgressBar(result.stats);
+      // 同步本地数据
+      if (progressData) progressData.stats = result.stats;
+    }
+  } catch (e) {
+    showToast('保存失败: ' + e.message);
+    labelEl.classList.toggle('done', !done);
+    labelEl.querySelector('input').checked = !done;
+  }
+}
+
+async function startDay(day) {
+  if (!confirm(`确定要开始 Day ${day} 的学习吗？\n将创建分支 day${String(day).padStart(2,'0')} 和对应文件夹。`)) return;
+  try {
+    const res = await fetch(API + '/api/start-day', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ day }),
+    });
+    const result = await res.json();
+    if (result.ok) {
+      showToast(result.message, 3000);
+      loadBranch();
+    } else {
+      showToast('操作失败: ' + (result.detail || ''), 3000);
+    }
+  } catch (e) {
+    showToast('请求失败: ' + e.message);
+  }
+}
+
+async function loadBranch() {
+  try {
+    const res = await fetch(API + '/api/current-branch');
+    const data = await res.json();
+    document.getElementById('branchInfo').textContent = 'Branch: ' + data.branch;
+  } catch (e) {}
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ---------- 启动 ----------
+fetchProgress();
+loadBranch();
+</script>
+</body>
+</html>

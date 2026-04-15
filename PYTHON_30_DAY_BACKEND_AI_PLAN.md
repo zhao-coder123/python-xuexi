@@ -58,7 +58,8 @@
 | 测试 | `pytest` |
 | 代码规范 | `ruff` + `black` |
 | AI 集成 | `Dify API` / `OpenAI` / `DeepSeek` / `通义` |
-| 部署 | `Docker` + `Nginx` + `Uvicorn` |
+| 配置管理 | `pydantic-settings` |
+| 部署 | `Docker` + `Docker Compose` + `Nginx` + `Uvicorn` |
 
 ---
 
@@ -154,12 +155,15 @@
 - [ ] 类型注解
 - [ ] `datetime`
 - [ ] 标准库常用模块
+- [ ] `async/await` 异步编程基础
+- [ ] `asyncio` 事件循环概念
 
 **实践任务**
 
 - [ ] 写一个简单用户类
 - [ ] 写一个读取配置模块
 - [ ] 写一个异常处理示例
+- [ ] 写一个异步函数示例，对比同步与异步执行
 
 **完成标准**
 
@@ -194,12 +198,14 @@
 - [ ] Path 参数
 - [ ] Body 参数
 - [ ] Pydantic 请求校验
+- [ ] CORS 跨域配置
 
 **实践任务**
 
 - [ ] 建立 `routers/` 目录
 - [ ] 拆分路由文件
 - [ ] 定义请求模型
+- [ ] 配置 `CORSMiddleware` 解决跨域
 
 **完成标准**
 
@@ -231,6 +237,8 @@
 - [ ] `router / service / schema / model` 分层
 - [ ] 配置管理
 - [ ] 环境变量
+- [ ] `pydantic-settings` 配置管理
+- [ ] 依赖注入 (`Depends`) 深入使用
 
 **实践任务**
 
@@ -245,6 +253,9 @@ app/
   models/
   core/
 ```
+
+- [ ] 用 `pydantic-settings` 重构配置管理
+- [ ] 封装公共依赖（分页参数、数据库 Session 等）
 
 **完成标准**
 
@@ -329,6 +340,8 @@ app/
 - [ ] Model 定义
 - [ ] Session
 - [ ] 查询与提交
+- [ ] 数据库连接池配置
+- [ ] `get_db()` 依赖注入最佳实践
 
 **实践任务**
 
@@ -516,6 +529,7 @@ app/
 - [ ] 错误码设计
 - [ ] 代码检查
 - [ ] 格式化工具
+- [ ] 中间件开发（请求日志、耗时统计）
 
 **实践任务**
 
@@ -523,6 +537,8 @@ app/
 - [ ] 引入 `black`
 - [ ] 整理统一错误码
 - [ ] 补充异常处理中间件
+- [ ] 编写请求耗时统计中间件
+- [ ] 编写请求日志中间件
 
 **完成标准**
 
@@ -535,6 +551,9 @@ app/
 - [ ] `pytest` 基础
 - [ ] API 测试
 - [ ] 核心接口测试
+- [ ] 安全基础：SQL 注入防范原理
+- [ ] 接口限流（Rate Limiting）
+- [ ] 敏感数据脱敏（日志中不打印密码/token）
 
 **实践任务**
 
@@ -722,10 +741,12 @@ app/
 - [ ] Docker 基础
 - [ ] 生产启动方式
 - [ ] 反向代理认知
+- [ ] `docker-compose` 编排多服务
 
 **实践任务**
 
 - [ ] 为项目写 `Dockerfile`
+- [ ] 编写 `docker-compose.yml`（MySQL + Redis + FastAPI）
 - [ ] 用 Docker 跑起 FastAPI
 - [ ] 本地模拟部署
 
