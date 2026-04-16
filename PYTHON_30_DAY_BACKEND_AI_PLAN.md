@@ -58,6 +58,7 @@
 | 测试 | `pytest` |
 | 代码规范 | `ruff` + `black` |
 | AI 集成 | `Dify API` / `OpenAI` / `DeepSeek` / `通义` |
+| 工作流编排 | `Dify`（主线） / `n8n`（自动化） / `LangChain + LangGraph`（进阶） |
 | 配置管理 | `pydantic-settings` |
 | 部署 | `Docker` + `Docker Compose` + `Nginx` + `Uvicorn` |
 
@@ -110,6 +111,59 @@
 - [ ] Workflow
 - [ ] 流式输出
 - [ ] AI 任务记录
+
+---
+
+## AI 工具选型建议
+
+### 当前这条学习主线推荐怎么选
+
+- [ ] 主线先用 `Dify`：最快把模型、Prompt、知识库、Workflow 跑起来
+- [ ] 流程自动化再补 `n8n`：适合接表单、数据库、飞书、邮件、Webhook
+- [ ] 需要深度定制时再学 `LangChain`
+- [ ] 需要多步骤 Agent / 状态流时再学 `LangGraph`
+
+### 四个工具分别适合干什么
+
+- [ ] `Dify`：低代码 AI 应用平台，适合先做可演示 demo
+- [ ] `n8n`：通用自动化平台，适合把 AI 串到业务系统里
+- [ ] `LangChain`：代码层 LLM 开发库，适合自定义 AI 服务
+- [ ] `LangGraph`：复杂 Agent 编排，适合多步骤、可回退、有状态流程
+
+### 当前项目里的建议分工
+
+- [ ] `Dify` 负责：文章摘要、改写、标题优化、Workflow 快速验证
+- [ ] `n8n` 可选负责：定时任务、审批流、通知、外部系统同步
+- [ ] `LangChain / LangGraph` 暂时只做认知，不作为这 30 天主交付
+
+---
+
+## 最小后台页面蓝图
+
+### 必做页面
+
+- [ ] 登录页：账号登录、Token 写入、本地退出
+- [ ] Dashboard：学习项目概览、数据统计、最近 AI 任务
+- [ ] 用户列表页：分页、搜索、状态切换、角色展示
+- [ ] 文章列表页：分页、筛选、创建、编辑、删除
+- [ ] 文章编辑页：正文编辑、保存、调用 AI 摘要/改写/标题优化
+- [ ] 文件管理页：上传文件、预览、复制链接
+- [ ] AI 任务页：查看任务状态、输入、输出、耗时、失败原因
+
+### 可选页面
+
+- [ ] 角色权限页：角色列表、权限点配置
+- [ ] 操作日志页：按用户、模块、时间过滤日志
+- [ ] 系统设置页：模型配置、Dify Key、上传配置、限流配置
+
+### 页面和接口对照
+
+- [ ] 登录页对应：`POST /auth/login`
+- [ ] 用户列表页对应：`GET /users`、`POST /users`、`PATCH /users/{id}`
+- [ ] 文章列表/编辑页对应：`GET /articles`、`POST /articles`、`PATCH /articles/{id}`
+- [ ] 文件管理页对应：`POST /files/upload`、`GET /files`
+- [ ] AI 操作入口对应：`POST /articles/{id}/summary`、`rewrite`、`title-optimize`
+- [ ] AI 任务页对应：`GET /ai-tasks`、`GET /ai-tasks/{id}`
 
 ---
 
@@ -642,16 +696,19 @@ app/
 - [ ] Dify 应用模式
 - [ ] Chatflow / Workflow / Agent 基本概念
 - [ ] Dify API 调用方式
+- [ ] 为什么当前主线优先 `Dify`，而不是先上 `LangChain / LangGraph`
 
 **实践任务**
 
 - [ ] 创建一个 Dify 应用
 - [ ] 在 Python 中封装 Dify 调用服务
 - [ ] 打通一个最小调用接口
+- [ ] 梳理 `Dify / n8n / LangChain / LangGraph` 的适用边界
 
 **完成标准**
 
 - [ ] FastAPI 成功调用 Dify
+- [ ] 能解释这四个工具在当前项目中的分工
 
 ### Day 25 | 把 Dify 接到业务模块里
 
@@ -680,6 +737,7 @@ app/
 - [ ] 什么是工具调用
 - [ ] 什么是工作流
 - [ ] 适合业务系统的 Agent 场景
+- [ ] `n8n`、`LangChain`、`LangGraph` 在工作流里的不同定位
 
 **实践任务**
 
@@ -724,10 +782,10 @@ app/
 **实践任务**
 
 - [ ] 用 `Vue` 或 `React` 起一个最小后台页
-- [ ] 接登录接口
-- [ ] 接用户列表接口
-- [ ] 接文章列表接口
-- [ ] 接 AI 摘要接口
+- [ ] 接登录页和 Dashboard
+- [ ] 接用户列表页
+- [ ] 接文章列表页和文章编辑页
+- [ ] 接 AI 摘要接口和 AI 任务页
 
 **完成标准**
 

@@ -1684,6 +1684,11 @@
                   "id": "w4d24_学习内容_3",
                   "text": "Dify API 调用方式",
                   "done": false
+                },
+                {
+                  "id": "w4d24_学习内容_4",
+                  "text": "为什么当前主线优先 `Dify`，而不是先上 `LangChain / LangGraph`",
+                  "done": false
                 }
               ]
             },
@@ -1704,6 +1709,11 @@
                   "id": "w4d24_实践任务_3",
                   "text": "打通一个最小调用接口",
                   "done": false
+                },
+                {
+                  "id": "w4d24_实践任务_4",
+                  "text": "梳理 `Dify / n8n / LangChain / LangGraph` 的适用边界",
+                  "done": false
                 }
               ]
             },
@@ -1713,6 +1723,11 @@
                 {
                   "id": "w4d24_完成标准_1",
                   "text": "FastAPI 成功调用 Dify",
+                  "done": false
+                },
+                {
+                  "id": "w4d24_完成标准_2",
+                  "text": "能解释这四个工具在当前项目中的分工",
                   "done": false
                 }
               ]
@@ -1807,6 +1822,11 @@
                 {
                   "id": "w4d26_学习内容_4",
                   "text": "适合业务系统的 Agent 场景",
+                  "done": false
+                },
+                {
+                  "id": "w4d26_学习内容_5",
+                  "text": "`n8n`、`LangChain`、`LangGraph` 在工作流里的不同定位",
                   "done": false
                 }
               ]
@@ -1930,22 +1950,22 @@
                 },
                 {
                   "id": "w4d28_实践任务_2",
-                  "text": "接登录接口",
+                  "text": "接登录页和 Dashboard",
                   "done": false
                 },
                 {
                   "id": "w4d28_实践任务_3",
-                  "text": "接用户列表接口",
+                  "text": "接用户列表页",
                   "done": false
                 },
                 {
                   "id": "w4d28_实践任务_4",
-                  "text": "接文章列表接口",
+                  "text": "接文章列表页和文章编辑页",
                   "done": false
                 },
                 {
                   "id": "w4d28_实践任务_5",
-                  "text": "接 AI 摘要接口",
+                  "text": "接 AI 摘要接口和 AI 任务页",
                   "done": false
                 }
               ]
@@ -2244,6 +2264,185 @@
       ]
     },
     {
+      "id": "ai_工具选型建议",
+      "title": "AI 工具选型建议",
+      "items": [],
+      "sections": [
+        {
+          "title": "当前这条学习主线推荐怎么选",
+          "items": [
+            {
+              "id": "extra_当前这条学习_1",
+              "text": "主线先用 `Dify`：最快把模型、Prompt、知识库、Workflow 跑起来",
+              "done": false
+            },
+            {
+              "id": "extra_当前这条学习_2",
+              "text": "流程自动化再补 `n8n`：适合接表单、数据库、飞书、邮件、Webhook",
+              "done": false
+            },
+            {
+              "id": "extra_当前这条学习_3",
+              "text": "需要深度定制时再学 `LangChain`",
+              "done": false
+            },
+            {
+              "id": "extra_当前这条学习_4",
+              "text": "需要多步骤 Agent / 状态流时再学 `LangGraph`",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "四个工具分别适合干什么",
+          "items": [
+            {
+              "id": "extra_四个工具分别_1",
+              "text": "`Dify`：低代码 AI 应用平台，适合先做可演示 demo",
+              "done": false
+            },
+            {
+              "id": "extra_四个工具分别_2",
+              "text": "`n8n`：通用自动化平台，适合把 AI 串到业务系统里",
+              "done": false
+            },
+            {
+              "id": "extra_四个工具分别_3",
+              "text": "`LangChain`：代码层 LLM 开发库，适合自定义 AI 服务",
+              "done": false
+            },
+            {
+              "id": "extra_四个工具分别_4",
+              "text": "`LangGraph`：复杂 Agent 编排，适合多步骤、可回退、有状态流程",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "当前项目里的建议分工",
+          "items": [
+            {
+              "id": "extra_当前项目里的_1",
+              "text": "`Dify` 负责：文章摘要、改写、标题优化、Workflow 快速验证",
+              "done": false
+            },
+            {
+              "id": "extra_当前项目里的_2",
+              "text": "`n8n` 可选负责：定时任务、审批流、通知、外部系统同步",
+              "done": false
+            },
+            {
+              "id": "extra_当前项目里的_3",
+              "text": "`LangChain / LangGraph` 暂时只做认知，不作为这 30 天主交付",
+              "done": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "最小后台页面蓝图",
+      "title": "最小后台页面蓝图",
+      "items": [],
+      "sections": [
+        {
+          "title": "必做页面",
+          "items": [
+            {
+              "id": "extra_必做页面_1",
+              "text": "登录页：账号登录、Token 写入、本地退出",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_2",
+              "text": "Dashboard：学习项目概览、数据统计、最近 AI 任务",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_3",
+              "text": "用户列表页：分页、搜索、状态切换、角色展示",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_4",
+              "text": "文章列表页：分页、筛选、创建、编辑、删除",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_5",
+              "text": "文章编辑页：正文编辑、保存、调用 AI 摘要/改写/标题优化",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_6",
+              "text": "文件管理页：上传文件、预览、复制链接",
+              "done": false
+            },
+            {
+              "id": "extra_必做页面_7",
+              "text": "AI 任务页：查看任务状态、输入、输出、耗时、失败原因",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "可选页面",
+          "items": [
+            {
+              "id": "extra_可选页面_1",
+              "text": "角色权限页：角色列表、权限点配置",
+              "done": false
+            },
+            {
+              "id": "extra_可选页面_2",
+              "text": "操作日志页：按用户、模块、时间过滤日志",
+              "done": false
+            },
+            {
+              "id": "extra_可选页面_3",
+              "text": "系统设置页：模型配置、Dify Key、上传配置、限流配置",
+              "done": false
+            }
+          ]
+        },
+        {
+          "title": "页面和接口对照",
+          "items": [
+            {
+              "id": "extra_页面和接口对_1",
+              "text": "登录页对应：`POST /auth/login`",
+              "done": false
+            },
+            {
+              "id": "extra_页面和接口对_2",
+              "text": "用户列表页对应：`GET /users`、`POST /users`、`PATCH /users/{id}`",
+              "done": false
+            },
+            {
+              "id": "extra_页面和接口对_3",
+              "text": "文章列表/编辑页对应：`GET /articles`、`POST /articles`、`PATCH /articles/{id}`",
+              "done": false
+            },
+            {
+              "id": "extra_页面和接口对_4",
+              "text": "文件管理页对应：`POST /files/upload`、`GET /files`",
+              "done": false
+            },
+            {
+              "id": "extra_页面和接口对_5",
+              "text": "AI 操作入口对应：`POST /articles/{id}/summary`、`rewrite`、`title-optimize`",
+              "done": false
+            },
+            {
+              "id": "extra_页面和接口对_6",
+              "text": "AI 任务页对应：`GET /ai-tasks`、`GET /ai-tasks/{id}`",
+              "done": false
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "推荐项目结构",
       "title": "推荐项目结构",
       "items": []
@@ -2384,7 +2583,7 @@
     }
   ],
   "stats": {
-    "total": 328,
+    "total": 359,
     "done": 0
   }
 }
