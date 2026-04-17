@@ -9,7 +9,7 @@ alembic init migrations
 ## 2. 修改 `alembic.ini`
 
 ```ini
-sqlalchemy.url = mysql+pymysql://root:123456@150.158.95.116:3306/ai_admin_demo
+sqlalchemy.url = mysql+pymysql://root:123456@mysql_xxxx/ai_admin_demo
 ```
 
 正式项目里更推荐从环境变量读取，而不是把密码直接写进仓库文件。
