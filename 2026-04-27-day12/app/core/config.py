@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     jwt_secret_key: str = "change-me"
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 120
-    database_url: str = "mysql+pymysql://root:123456@150.158.95.116:3306/ai_admin_demo"
+    database_url: str = "mysql+pymysql://root:123456@mysql_xxxx/ai_admin_demo"
 
     model_config = SettingsConfigDict(
         env_file=(".env.local", ".env"),
