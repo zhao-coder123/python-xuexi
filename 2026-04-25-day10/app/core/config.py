@@ -9,7 +9,11 @@ class Settings(BaseSettings):
     app_name: str = "Day 10 SQLAlchemy Demo"
     database_url: str = "sqlite:///./day10_demo.db"
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(
+        env_file=(".env.local", ".env"),
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
 
 @lru_cache()
