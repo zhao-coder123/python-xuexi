@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 28 Admin Demo</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+      .layout { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+      .sidebar { background: #111827; color: white; padding: 24px; }
+      .sidebar h1 { font-size: 18px; margin: 0 0 16px; }
+      .sidebar p { color: #cbd5e1; font-size: 14px; }
+      .content { padding: 24px; }
+      .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06); }
+      .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+      .stat { font-size: 28px; font-weight: bold; margin-top: 8px; }
+      button { background: #2563eb; color: white; border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+      pre { white-space: pre-wrap; word-break: break-word; background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 10px; }
+      @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>Admin Demo</h1>
+        <p>Day 28 最小后台联调页</p>
+      </aside>
+      <main class="content">
+        <div class="row">
+          <div class="card"><div>用户模块</div><div class="stat">Users</div></div>
+          <div class="card"><div>文章模块</div><div class="stat">Articles</div></div>
+          <div class="card"><div>AI 任务</div><div class="stat">AI Tasks</div></div>
+        </div>
+        <div class="card">
+          <h2>模拟联调</h2>
+          <p>这里用最小静态页演示后台管理系统的基本信息布局。真实项目里你会用 Vue 或 React 去对接后端接口。</p>
+          <button id="loadBtn">加载模拟数据</button>
+          <pre id="result">点击按钮后显示模拟接口结果</pre>
+        </div>
+      </main>
+    </div>
+    <script>
+      document.getElementById('loadBtn').addEventListener('click', () => {
+        const data = {
+          dashboard: { users: 12, articles: 8, aiTasks: 5 },
+          endpoints: ['/auth/login', '/users', '/articles', '/ai-tasks']
+        };
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      });
+    </script>
+  </body>
+  </html>
