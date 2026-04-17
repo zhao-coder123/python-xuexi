@@ -48,6 +48,33 @@ def show_basic_types() -> None:
     print(f"next_topic = {next_topic}, type = {type(next_topic).__name__}")
 
 
+def show_string_and_conversion_examples() -> None:
+    """演示字符串常见操作和基础类型转换。"""
+
+    print("\n=== 1.1 字符串和类型转换 ===")
+
+    raw_name = "  minda python  "
+    age_text = "18"
+
+    # strip() 去掉首尾空格。
+    clean_name = raw_name.strip()
+
+    # upper() / replace() / split() 都是字符串里非常常见的方法。
+    print(f"原始字符串: {raw_name!r}")
+    print(f"去掉空格后: {clean_name!r}")
+    print(f"转大写: {clean_name.upper()}")
+    print(f"替换后: {clean_name.replace('python', 'backend')}")
+    print(f"切分后: {clean_name.split()}")
+
+    # 后端里经常会把请求参数从字符串转换成数字。
+    age_number = int(age_text)
+    score_text = str(99)
+
+    print(f"age_text = {age_text}, type = {type(age_text).__name__}")
+    print(f"age_number = {age_number}, type = {type(age_number).__name__}")
+    print(f"score_text = {score_text}, type = {type(score_text).__name__}")
+
+
 def show_containers() -> list[str]:
     """演示容器类型，并返回任务列表供后面的函数继续使用。"""
 
@@ -124,6 +151,7 @@ def main() -> None:
     print("Python Day 1 学习示例开始")
 
     show_basic_types()
+    show_string_and_conversion_examples()
     tasks = show_containers()
     show_control_flow(tasks)
     show_functions_and_modules(tasks)
