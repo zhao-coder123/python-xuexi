@@ -6,3 +6,7 @@ __pycache__/
 venv/
 node_modules/
 *.db
+.env.local
+**/.env.local
+uploads/
+**/uploads/
