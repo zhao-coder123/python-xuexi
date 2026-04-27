@@ -1,0 +1,16 @@
+{
+  "name": "remotion-day1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "remotion studio src/index.js",
+    "render": "remotion render src/index.js Day1PythonLesson out/day1-python-lesson.mp4",
+    "compositions": "remotion compositions src/index.js"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.448",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.448"
+  }
+}
